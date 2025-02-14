@@ -1,14 +1,17 @@
 using NodeCanvas.Framework;
 using ParadoxNotion.Design;
-
+using UnityEngine.AI;
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions {
 
 	public class RoamAT : ActionTask {
-
+		public float roamRadius;
+		private NavMeshAgent navAgent;
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
+			navAgent = agent.GetComponent<NavMeshAgent>();
 			return null;
 		}
 
@@ -16,6 +19,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+			navAgent.SetDestination(Vector3.zero);
 			EndAction(true);
 		}
 
