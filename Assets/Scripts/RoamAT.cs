@@ -19,13 +19,21 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-			navAgent.SetDestination(Vector3.zero);
-			EndAction(true);
+			Vector3 randomPoint = Random.insideUnitSphere * roamRadius + agent.transform.position;
+			NavMeshHit navHit;
+			if(!NavMesh.SamplePosition(randomPoint, out navHit, roamRadius, NavMesh.AllAreas))
+			{
+				return;
+			}
+			navAgent.SetDestination(navHit.position);
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			
+			if(!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+			{
+                EndAction(true);
+            }
 		}
 
 		//Called when the task is disabled.
