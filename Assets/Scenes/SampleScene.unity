@@ -422,7 +422,7 @@ MonoBehaviour:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
+    _translation: {x: -90.893074, y: -100.90008}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 1124498452}
   - component: {fileID: 1124498451}
   - component: {fileID: 1124498455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
