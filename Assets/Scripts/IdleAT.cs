@@ -6,11 +6,11 @@ using UnityEngine;
 namespace NodeCanvas.Tasks.Actions {
 
 	public class IdleAT : ActionTask {
-        public Material mouseMat;
+		private float timer;
+		public float idleTime;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
-            mouseMat = agent.GetComponent<Material>();
             return null;
 		}
 
@@ -19,12 +19,16 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
             // Mouse material changes to light brown color
-            mouseMat.color = new Color(135, 106, 101);
+			timer = 0f;
         }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
-			
+			timer += Time.deltaTime;
+			if(timer >= idleTime)
+			{
+				EndAction(true);
+            }
 		}
 
 		//Called when the task is disabled.
