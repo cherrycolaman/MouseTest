@@ -279,8 +279,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
-  m_Acceleration: 8
+  m_Speed: 20
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -392,11 +392,13 @@ MonoBehaviour:
   _parentBlackboard: {fileID: 0}
   _serializedBlackboard: '{"_variables":{"cheese":{"_value":1,"_name":"cheese","_id":"a91962fe-ae93-46ce-b516-8acd3b964323","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"player":{"_value":2,"_name":"player","_id":"eaba4551-2179-4be0-a6b7-f7b0da3c540a","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+    UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"},"hole":{"_value":3,"_name":"hole","_id":"fdb8c6a5-a5d9-4a99-af86-cd7cd8a58894","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
     UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}}}'
   _objectReferences:
   - {fileID: 0}
   - {fileID: 1124498450}
   - {fileID: 760740279}
+  - {fileID: 1217767023}
   _serializedVariables:
   - _json: '{"_value":1,"_name":"cheese","_id":"a91962fe-ae93-46ce-b516-8acd3b964323","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
@@ -408,6 +410,11 @@ MonoBehaviour:
     _references:
     - {fileID: 0}
     - {fileID: 760740279}
+  - _json: '{"_value":1,"_name":"hole","_id":"fdb8c6a5-a5d9-4a99-af86-cd7cd8a58894","$type":"NodeCanvas.Framework.Variable`1[[UnityEngine.GameObject,
+      UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]"}'
+    _references:
+    - {fileID: 0}
+    - {fileID: 1217767023}
 --- !u!114 &25464850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":221.0,"y":255.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.RetreatAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":435.0,"y":231.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":532.0,"y":383.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_condition":{"detectionRadius":40.0,"targetMask":{"value":128},"$type":"NodeCanvas.Tasks.Conditions.IsObjectNear"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_nestedFSM":{"_value":1},"_position":{"x":221.0,"y":255.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"0"},{"_actionList":{"executionMode":1,"actions":[{"hole":{"_name":"hole","_targetVariableID":"fdb8c6a5-a5d9-4a99-af86-cd7cd8a58894"},"$type":"NodeCanvas.Tasks.Actions.RetreatAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":436.0,"y":231.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"1"},{"_actionList":{"executionMode":1,"actions":[{"detectionRadius":50.0,"targetMask":{"value":128},"$type":"NodeCanvas.Tasks.Actions.HideAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_position":{"x":532.0,"y":383.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"2"}],"connections":[{"_condition":{"detectionRadius":30.0,"targetMask":{"value":128},"$type":"NodeCanvas.Tasks.Conditions.IsObjectNear"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: d9bb75111b8216a47aa71fddd17400ca, type: 2}
@@ -868,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1867afd55a74264aa52f4499be80e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!65 &760740281
 BoxCollider:
   m_ObjectHideFlags: 0
