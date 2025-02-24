@@ -8,6 +8,7 @@ namespace NodeCanvas.Tasks.Actions {
 	public class RoamAT : ActionTask {
 		public float roamRadius;
 		private NavMeshAgent navAgent;
+		public BBParameter<Material> mouseMat;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
@@ -21,7 +22,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 			// Mouse material changes to light brown color
-			
+			mouseMat.value.color = new Color(135, 106, 101);
 			// Mouse picks a random point on the NavMesh and moves to it
 			Vector3 randomPoint = Random.insideUnitSphere * roamRadius + agent.transform.position;
 			NavMeshHit navHit;

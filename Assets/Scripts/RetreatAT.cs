@@ -8,6 +8,7 @@ namespace NodeCanvas.Tasks.Actions {
 	public class RetreatAT : ActionTask {
         private NavMeshAgent navAgent;
         public BBParameter<GameObject> hole;
+        public BBParameter<Material> mouseMat;
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
@@ -20,6 +21,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
             navAgent.SetDestination(hole.value.transform.position);
+            mouseMat.value.color = new Color(4, 74, 204);
         }
 
 		//Called once per frame while the action is active.
