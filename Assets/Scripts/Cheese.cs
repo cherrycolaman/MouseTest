@@ -19,6 +19,7 @@ public class Cheese : MonoBehaviour
 
     public void SpawnCheese()
     {
+        // Picks a random point on the NavMesh to spawn cheese when the function is called
         Vector3 randomPoint = Random.insideUnitSphere * 80;
         NavMeshHit navHit;
         if (!NavMesh.SamplePosition(randomPoint, out navHit, 100, NavMesh.AllAreas))

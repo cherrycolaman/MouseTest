@@ -21,11 +21,13 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
             timer = 0f;
+            // Mouse is supposed to change to an orange-brown color
             mouseMat.value.color = new Color(191, 134, 54);
         }
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+            // Mouse eats cheese for about 3 seconds before cheese respawns elsewhere
             timer += Time.deltaTime;
             if (timer >= eatingTime)
             {

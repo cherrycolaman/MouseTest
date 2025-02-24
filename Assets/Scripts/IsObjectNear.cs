@@ -27,6 +27,8 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Called once per frame while the condition is active.
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
+            // Searches for either a player or cheese depending on the context, within a certain detection radius
+            // Returns true if the object is within the radius
             Collider[] colliders;
             colliders = Physics.OverlapSphere(agent.transform.position, detectionRadius, targetMask);
             if (colliders.Length > 0)

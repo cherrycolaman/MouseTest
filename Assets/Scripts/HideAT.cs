@@ -23,6 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+			// Mouse stays in hole until player is outside of a certain radius around it
             Collider[] colliders;
             colliders = Physics.OverlapSphere(agent.transform.position, detectionRadius, targetMask);
             if (colliders.Length == 0)

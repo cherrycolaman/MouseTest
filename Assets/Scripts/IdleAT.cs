@@ -26,6 +26,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
+			// Mouse simply stays idle for a certain amount of time
 			timer += Time.deltaTime;
 			if(timer >= idleTime)
 			{

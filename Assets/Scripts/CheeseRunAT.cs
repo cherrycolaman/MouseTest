@@ -20,7 +20,9 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
+			// Supposed to make the mouse a bright yellow color when running to cheese
             mouseMat.value.color = new Color(168, 162, 50);
+			// Mouse moves to cheese's position
             navAgent.SetDestination(cheese.value.transform.position);
 		}
 
