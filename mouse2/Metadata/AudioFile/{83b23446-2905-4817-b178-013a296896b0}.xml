@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{83b23446-2905-4817-b178-013a296896b0}">
+		<property name="assetPath">
+			<value>646849__konstati__crunch_munch.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.1230833333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a6f5dc45-529c-4f56-8d4f-3c8256c70a37}</destination>
+		</relationship>
+	</object>
+</objects>
