@@ -27,5 +27,6 @@ public class Cheese : MonoBehaviour
             return;
         }
         transform.position = navHit.position;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Teleport");
     }
 }

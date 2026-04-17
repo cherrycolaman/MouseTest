@@ -23,6 +23,7 @@ namespace NodeCanvas.Tasks.Actions {
 			// Mouse starts moving to empty GameObject corresponding to the hole position
             navAgent.SetDestination(hole.value.transform.position);
             mouseMat.value.color = new Color(4, 74, 204);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Squeak");
         }
 
 		//Called once per frame while the action is active.
